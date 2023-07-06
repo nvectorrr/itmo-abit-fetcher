@@ -1,7 +1,4 @@
 spring:
-    mvc:
-        servlet:
-            path: /
     datasource:
         url: jdbc:postgresql://localhost:5432/itmo-abit-fetcher
         username: postgres
@@ -14,3 +11,7 @@ spring:
 
 crnk:
     path-prefix: /api/v1/iaf
+
+logging:
+    level:
+        org.springframework.web: DEBUG

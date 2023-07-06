@@ -1,9 +1,10 @@
 package com.nva.itmoabitfetcher.entity;
 
 import io.crnk.core.resource.annotations.JsonApiResource;
-import jakarta.persistence.*;
+
 import lombok.Data;
 
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.UUID;
 

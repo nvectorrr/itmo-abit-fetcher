@@ -1,7 +1,7 @@
 package com.nva.itmoabitfetcher.entity;
 
 import io.crnk.core.resource.annotations.JsonApiResource;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 import java.util.UUID;
