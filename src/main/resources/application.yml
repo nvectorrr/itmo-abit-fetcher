@@ -1,6 +1,6 @@
-data:
+spring:
     datasource:
-        url: jdbc:postgresql://localhost:5432/itmo_abit_fetcher
+        url: jdbc:postgresql://localhost:5432/itmo-abit-fetcher
         username: postgres
         password: postgres
         driver-class-name: org.postgresql.Driver
