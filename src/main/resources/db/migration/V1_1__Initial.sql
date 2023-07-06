@@ -7,25 +7,13 @@
 
 -- Started on 2023-07-06 23:53:38
 
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
 --
 -- TOC entry 6 (class 2615 OID 195089)
 -- Name: default; Type: SCHEMA; Schema: -; Owner: -
 --
 
-DROP SCHEMA IF EXISTS "default" CASCADE;
-CREATE SCHEMA "default";
-
+DROP TABLE IF EXISTS itmo_abit_fetcher.applications CASCADE;
+DROP TABLE IF EXISTS itmo_abit_fetcher.educational_programs CASCADE;
 
 SET default_tablespace = '';
 
@@ -36,7 +24,7 @@ SET default_table_access_method = heap;
 -- Name: applications; Type: TABLE; Schema: default; Owner: -
 --
 
-CREATE TABLE "default".applications (
+CREATE TABLE itmo_abit_fetcher.applications (
                                         id uuid NOT NULL,
                                         contest text,
                                         exam_type text,
@@ -60,7 +48,7 @@ CREATE TABLE "default".applications (
 -- Name: educational_programs; Type: TABLE; Schema: default; Owner: -
 --
 
-CREATE TABLE "default".educational_programs (
+CREATE TABLE itmo_abit_fetcher.educational_programs (
                                                 id uuid NOT NULL,
                                                 name character varying(30) NOT NULL,
                                                 full_name text NOT NULL,
@@ -77,7 +65,7 @@ CREATE TABLE "default".educational_programs (
 -- Name: applications applications_pk; Type: CONSTRAINT; Schema: default; Owner: -
 --
 
-ALTER TABLE ONLY "default".applications
+ALTER TABLE ONLY itmo_abit_fetcher.applications
     ADD CONSTRAINT applications_pk PRIMARY KEY (id);
 
 
@@ -86,7 +74,7 @@ ALTER TABLE ONLY "default".applications
 -- Name: educational_programs educational_programs_pk; Type: CONSTRAINT; Schema: default; Owner: -
 --
 
-ALTER TABLE ONLY "default".educational_programs
+ALTER TABLE ONLY itmo_abit_fetcher.educational_programs
     ADD CONSTRAINT educational_programs_pk PRIMARY KEY (id);
 
 
@@ -95,8 +83,8 @@ ALTER TABLE ONLY "default".educational_programs
 -- Name: applications applications_educational_programs_id_fk; Type: FK CONSTRAINT; Schema: default; Owner: -
 --
 
-ALTER TABLE ONLY "default".applications
-    ADD CONSTRAINT applications_educational_programs_id_fk FOREIGN KEY (educational_program_id) REFERENCES "default".educational_programs(id);
+ALTER TABLE ONLY itmo_abit_fetcher.applications
+    ADD CONSTRAINT applications_educational_programs_id_fk FOREIGN KEY (educational_program_id) REFERENCES itmo_abit_fetcher.educational_programs(id);
 
 
 -- Completed on 2023-07-06 23:53:39
